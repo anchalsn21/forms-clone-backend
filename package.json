@@ -4,8 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon node server.js"
+    "start": "nodemon node server.js",
+    "test": "set NODE_ENV=test && jest --runInBand --detectOpenHandles",
+    "test-w": "set NODE_ENV=test && jest --runInBand --detectOpenHandles --watchAll"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +22,9 @@
     "mongoose": "^6.0.2",
     "nanoid": "^3.1.25",
     "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "jest": "^27.1.0",
+    "mongodb-memory-server": "^7.3.6"
   }
 }
