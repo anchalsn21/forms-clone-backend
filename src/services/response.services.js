@@ -3,9 +3,9 @@ const Forms = require("../models/form.model");
 const { ObjectId } = require("mongoose").Types;
 
 const addNewResponse = async (newResponseDto) => {
-  let condition = { form: ObjectId(newResponseDto.form) };
-
+  let condition = { _id: ObjectId(newResponseDto.form) };
   let form = await Forms.findOne(condition);
+  console.log({ form });
   if (!form) throw new Error("No Form found");
   const responseObject = {
     addedBy: newResponseDto.addedBy,
