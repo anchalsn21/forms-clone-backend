@@ -14,7 +14,7 @@ const addNewResponse = async (newResponseDto) => {
   };
   const response = await Responses(responseObject);
   await response.save();
-  form.responseCount++;
+  form.responseCount = form.responseCount + 1;
   await form.save();
   //   await Forms.updateOne(
   //    condition,
